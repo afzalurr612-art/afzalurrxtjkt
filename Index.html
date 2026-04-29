@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Burger Bangor | Profil UMKM Premium</title>
+    <!-- Tailwind CSS + Google Fonts + Font Awesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom Tailwind override untuk transisi & cleaner shadows -->
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e6f7ec 100%);
+            background-attachment: fixed;
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+        .card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.15);
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .product-item {
+            transition: all 0.25s ease;
+        }
+        .product-item:hover {
+            background-color: #fef9e3;
+            border-left-color: #f59e0b;
+            transform: scale(1.01);
+        }
+        .input-focus-ring:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.4);
+            border-color: #22c55e;
+        }
+        .btn-pulse {
+            transition: all 0.2s;
+        }
+        .btn-pulse:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.4);
+        }
+        @keyframes slow-float {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-6px); }
+        }
+        .hover-float:hover {
+            animation: slow-float 1.2s infinite alternate ease-in-out;
+        }
+        ::selection {
+            background: #86efac;
+            color: #064e3b;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+        <!-- Header dengan animasi fade in -->
+        <div class="text-center fade-in-up mb-10 md:mb-12" style="animation-delay: 0.1s; animation-fill-mode: forwards;">
+            <div class="inline-block bg-white/50 backdrop-blur-sm rounded-full px-5 py-1 shadow-sm mb-3">
+                <span class="text-emerald-700 font-semibold text-sm tracking-wide"><i class="fas fa-store mr-1"></i> UMKM BANDUNG RAYA</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-emerald-800 via-teal-700 to-blue-700 bg-clip-text text-transparent tracking-tight">🍔 Burger Bangor</h1>
+            <p class="text-gray-600 max-w-2xl mx-auto mt-3 text-base md:text-lg">Bijak dalam gigitan | Berani dalam rasa — Data usaha lengkap & modern</p>
+        </div>
+
+        <!-- Grid 2 kolom: Form Kiri & Info / Produk Kanan (respon jadi 1 kolom di mobile) -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 fade-in-up" style="animation-delay: 0.2s; animation-fill-mode: forwards;">
+            
+            <!-- Kolom Kiri : Form Detail UMKM (2/3 di lg) -->
+            <div class="lg:col-span-2">
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-white/40 overflow-hidden card-hover transition-all">
+                    <div class="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4">
+                        <h2 class="text-xl font-bold text-white flex items-center gap-2"><i class="fas fa-address-card"></i> Profil Lengkap UMKM</h2>
+                        <p class="text-emerald-100 text-sm mt-0.5">Data terintegrasi • Terverifikasi</p>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <!-- Form grid rapi -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
+                            <!-- Nama UMKM (readonly display tapi tampil teks) 
+                                 Karena ini halaman profil, kita gunakan display value tapi tetap elegan -->
+                            <div class="md:col-span-2">
+                                <label class="block text-gray-700 font-semibold mb-1 text-sm"><i class="fas fa-trademark text-emerald-500 mr-1"></i> Nama UMKM</label>
+                                <div class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 flex items-center justify-between">
+                                    <span class="font-bold text-gray-800 text-lg">burger bangor</span>
+                                    <span class="bg-emerald-100 text-emerald-700 text-xs px-2 py-1 rounded-full"><i class="fas fa-check-circle"></i> Terdaftar</span>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-1 text-sm"><i class="fas fa-user-circle text-blue-500 mr-1"></i> Nama Pemilik</label>
+                                <div class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-gray-800">afzalur rahman</div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-1 text-sm"><i class="fab fa-whatsapp text-green-500 mr-1"></i> No. HP / WA</label>
+                                <div class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-gray-800">085881385868</div>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-gray-700 font-semibold mb-1 text-sm"><i class="fas fa-location-dot text-red-400 mr-1"></i> Alamat Lengkap</label>
+                                <div class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-gray-700 leading-relaxed">jln semngka 3 kelurahan jatipulo kecamatan pelmerah samping matrial tb bandung jaya</div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-1 text-sm"><i class="fas fa-envelope text-slate-500 mr-1"></i> Email (opsional)</label>
+                                <div class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-gray-800 break-all">afzalurr612@gmail.com</div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-1 text-sm"><i class="far fa-clock text-amber-600 mr-1"></i> Jam Operasional</label>
+                                <div class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-gray-800"><span class="font-medium">15.00 - 22.00</span> <span class="text-xs text-gray-500">(WIB)</span></div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-1 text-sm"><i class="fas fa-chart-line text-indigo-500 mr-1"></i> Kategori Usaha</label>
+                                <div class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-gray-800 capitalize">umkm · Kuliner cepat saji</div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-1 text-sm"><i class="fas fa-users text-purple-500 mr-1"></i> Target Pasar</label>
+                                <div class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-gray-800">pelajar menengah ke atas & young professionals</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Deskripsi Usaha - disajikan dengan panel menarik -->
+                        <div class="mt-6 pt-2 border-t border-gray-100">
+                            <label class="block text-gray-700 font-semibold mb-2 text-base"><i class="fas fa-align-left text-emerald-600 mr-2"></i> Deskripsi Usaha & Brand Story</label>
+                            <div class="bg-gradient-to-br from-amber-50 to-emerald-50 p-5 rounded-xl border-l-8 border-amber-400 shadow-inner">
+                                <p class="text-gray-700 leading-relaxed mb-3 text-sm md:text-base">🍔<strong class="font-bold"> [burger bangor]</strong> adalah destinasi kuliner yang menyajikan burger premium dengan sentuhan rasa yang unik. Kami berkomitmen untuk menghadirkan perpaduan antara daging panggang yang juicy, roti bun yang lembut, dan saus racikan rahasia dalam setiap gigitannya. Fokus kami adalah memberikan pengalaman makan yang memuaskan, cepat, dan terjangkau bagi para pencinta kuliner yang menginginkan kualitas tanpa kompromi.</p>
+                                <p class="text-gray-700 leading-relaxed text-sm md:text-base italic border-t border-amber-200 pt-3 mt-2">✨ "Lupakan burger yang membosankan! <strong>Burger Bangor</strong> hadir untuk mendobrak selera makan Anda. Kami menyajikan smash burger dengan teknik panggangan suhu tinggi untuk menciptakan crust yang gurih di luar namun tetap juicy di dalam. Dibuat fresh setiap hari dengan bahan-bahan lokal pilihan, burger kami dirancang untuk menemani momen nongkrong atau saat butuh asupan energi cepat di sela-sela kesibukan. <strong>Burger Bangor: Big Bite, Big Mood!"</strong></p>
+                            </div>
+                        </div>
+
+                        <!-- Produk Unggulan dengan Harga spesifik (info paket small/large) -->
+                        <div class="mt-7">
+                            <div class="flex flex-wrap justify-between items-center gap-2 border-b border-gray-200 pb-2 mb-4">
+                                <h3 class="text-lg font-bold text-gray-800 flex items-center"><i class="fas fa-utensils text-emerald-600 mr-2"></i> Produk Andalan</h3>
+                                <span class="text-xs bg-gray-100 px-3 py-1 rounded-full text-gray-600">Burger Bangor Signature</span>
+                            </div>
+                            <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-4 flex flex-wrap md:flex-nowrap justify-between items-center gap-3 transition-all hover:shadow-md">
+                                <div class="flex items-center gap-3">
+                                    <div class="bg-emerald-100 w-12 h-12 rounded-full flex items-center justify-center"><i class="fas fa-hamburger text-emerald-700 text-2xl"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 text-lg">burger bangor</h4>
+                                        <p class="text-xs text-gray-500">Signature smash beef + saus rahasia</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4 items-center">
+                                    <div class="text-center bg-gray-50 px-4 py-1 rounded-lg">
+                                        <span class="text-xs font-semibold uppercase text-gray-500">Small</span>
+                                        <p class="font-bold text-emerald-700 text-lg">Rp27.000</p>
+                                    </div>
+                                    <div class="text-center bg-gray-50 px-4 py-1 rounded-lg ring-1 ring-emerald-200">
+                                        <span class="text-xs font-semibold uppercase text-emerald-600">Large</span>
+                                        <p class="font-bold text-emerald-800 text-lg">Rp54.000</p>
+                                    </div>
+                                    <div class="text-emerald-500"><i class="fas fa-arrow-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kolom Kanan : Daftar Produk lengkap (10 item) dan info tambahan -->
+            <div class="lg:col-span-1">
+                <!-- Kartu Menu Katalog -->
+                <div class="bg-white rounded-2xl shadow-xl border border-white/50 overflow-hidden sticky top-6 card-hover">
+                    <div class="bg-gradient-to-r from-blue-600 to-cyan-600 px-5 py-4 flex items-center justify-between">
+                        <h2 class="text-lg font-bold text-white flex items-center gap-2"><i class="fas fa-list-ul"></i> Daftar Menu</h2>
+                        <span class="bg-white/20 text-white text-xs px-2 py-1 rounded-full">10 varian</span>
+                    </div>
+                    <div class="max-h-[550px] overflow-y-auto custom-scroll p-3 space-y-2">
+                        <!-- Item Daftar Produk via array manual (semua produk sesuai request) -->
+                        <div class="product-item p-3 rounded-xl border-l-4 border-emerald-400 bg-white transition-all cursor-default">
+                            <p class="font-bold text-gray-800 text-sm">🍔 Basic Cheese Burger</p>
+                            <p class="text-xs text-gray-500">Patty sapi premium, keju cheddar meleleh, acar, saus rahasia</p>
+                        </div>
+                        <div class="product-item p-3 rounded-xl border-l-4 border-amber-500 bg-white">
+                            <p class="font-bold text-gray-800 text-sm">🥩 Double Beef Delight</p>
+                            <p class="text-xs text-gray-500">Dua lapis patty sapi + double keju, porsi besar mantap</p>
+                        </div>
+                        <div class="product-item p-3 rounded-xl border-l-4 border-orange-400 bg-white">
+                            <p class="font-bold text-gray-800 text-sm">🐔 Classic Chicken Crispy</p>
+                            <p class="text-xs text-gray-500">Fillet ayam goreng renyah, selada, tomat, mayonnaise</p>
+                        </div>
+                        <div class="product-item p-3 rounded-xl border-l-4 border-stone-500 bg-white">
+                            <p class="font-bold text-gray-800 text-sm">🍄 Truffle Mushroom Burger</p>
+                            <p class="text-xs text-gray-500">Patty sapi, tumisan champignon, minyak truffle aromatik</p>
+                        </div>
+                        <div class="product-item p-3 rounded-xl border-l-4 border-red-400 bg-white">
+                            <p class="font-bold text-gray-800 text-sm">🔥 Smoky BBQ Burger</p>
+                            <p class="text-xs text-gray-500">Saus BBQ homemade, bawang bombay karamel, onion ring</p>
+                        </div>
+                        <div class="product-item p-3 rounded-xl border-l-4 border-yellow-500 bg-white">
+                            <p class="font-bold text-gray-800 text-sm">🍳 Egg-stravaganza Burger</p>
+                            <p class="text-xs text-gray-500">Telur mata sapi setengah matang + beef bacon</p>
+                        </div>
+                        <div class="product-item p-3 rounded-xl border-l-4 border-green-500 bg-white">
+                            <p class="font-bold text-gray-800 text-sm">🌶️ Sambal Matah Burger</p>
+                            <p class="text-xs text-gray-500">Burger ayam/sapi dengan siraman sambal matah segar Bali</p>
+                        </div>
+                        <div class="product-item p-3 rounded-xl border-l-4 border-gray-700 bg-white">
+                            <p class="font-bold text-gray-800 text-sm">⚫ Black Pepper Glaze</p>
+                            <p class="text-xs text-gray-500">Lumuran saus lada hitam pedas intens</p>
+                        </div>
+                        <div class="product-item p-3 rounded-xl border-l-4 border-rose-400 bg-white">
+                            <p class="font-bold text-gray-800 text-sm">🌶️ Indo-Spicy Burger</p>
+                            <p class="text-xs text-gray-500">Saus aioli pedas + kerupuk tekstur renyah lokal</p>
+                        </div>
+                        <div class="product-item p-3 rounded-xl border-l-4 border-emerald-600 bg-gradient-to-r from-emerald-50 to-white">
+                            <p class="font-bold text-gray-800 text-sm">🔥 Burger Bangor Classic (small/large)</p>
+                            <p class="text-xs text-gray-600 font-medium">Rp27.000 - Rp54.000 · Best seller 🔥</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-3 border-t border-gray-100 text-center text-xs text-gray-500 flex justify-between">
+                        <span><i class="fas fa-truck-fast text-emerald-500"></i> Ready grab/gojek</span>
+                        <span><i class="fas fa-motorcycle"></i> 15-22.00 WIB</span>
+                    </div>
+                </div>
+
+                <!-- Tambahan info UMKM + CTA call to action hover-float -->
+                <div class="mt-6 bg-white/80 rounded-2xl p-5 shadow-md text-center card-hover">
+                    <div class="flex justify-center mb-2">
+                        <i class="fas fa-phone-alt text-emerald-600 text-2xl hover-float"></i>
+                    </div>
+                    <p class="font-semibold text-gray-800">Hubungi langsung</p>
+                    <a href="https://wa.me/6285881385868?text=Halo%20Burger%20Bangor%2C%20saya%20mau%20pesan%20burger%20niii!" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-5 rounded-full mt-2 transition btn-pulse text-sm"> <i class="fab fa-whatsapp"></i> Chat WhatsApp</a>
+                    <p class="text-xs text-gray-400 mt-3">Atau email: afzalurr612@gmail.com</p>
+                </div>
+
+                <!-- Ringkasan singkat jam dan target -->
+                <div class="mt-4 flex gap-2 justify-between text-xs text-gray-600 bg-white/70 rounded-xl p-3 backdrop-blur-sm">
+                    <div><i class="far fa-clock text-amber-500"></i> Operasional: 15.00 - 22.00</div>
+                    <div><i class="fas fa-chart-simple"></i> Target: Pelajar/Umum</div>
+                    <div><i class="fas fa-tag"></i> UMKM Digital</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Galeri singkat / keunggulan -->
+        <div class="mt-14 fade-in-up grid grid-cols-1 md:grid-cols-3 gap-5" style="animation-delay: 0.35s;">
+            <div class="flex items-center gap-4 bg-white/60 p-4 rounded-2xl shadow-sm backdrop-blur-[2px] hover:bg-white transition">
+                <div class="bg-emerald-100 p-3 rounded-full"><i class="fas fa-leaf text-emerald-700 text-xl"></i></div>
+                <div><h4 class="font-bold">Bahan Lokal Premium</h4><p class="text-xs text-gray-500">Fresh daily, daging sapi pilihan</p></div>
+            </div>
+            <div class="flex items-center gap-4 bg-white/60 p-4 rounded-2xl shadow-sm hover:bg-white transition">
+                <div class="bg-amber-100 p-3 rounded-full"><i class="fas fa-fire text-amber-600 text-xl"></i></div>
+                <div><h4 class="font-bold">Smash Technique</h4><p class="text-xs text-gray-500">Crust gurih, juicy di dalam</p></div>
+            </div>
+            <div class="flex items-center gap-4 bg-white/60 p-4 rounded-2xl shadow-sm hover:bg-white transition">
+                <div class="bg-blue-100 p-3 rounded-full"><i class="fas fa-motorcycle text-blue-600 text-xl"></i></div>
+                <div><h4 class="font-bold">Pengiriman Cepat</h4><p class="text-xs text-gray-500">GrabFood/GoFood siap melayani</p></div>
+            </div>
+        </div>
+
+        <!-- Footer sederhana & copyright -->
+        <footer class="mt-14 text-center text-gray-500 text-xs border-t border-white/40 pt-6">
+            <p class="flex justify-center gap-3 flex-wrap"><span>© 2025 Burger Bangor - Bandung Jaya</span><span>•</span><span><i class="fas fa-map-pin"></i> Jln Semngka 3, Pelmerah</span><span>•</span><span>Resmi UMKM Berdaya Saing</span></p>
+            <p class="mt-1 text-emerald-700">Big Bite, Big Mood! 🍔✨</p>
+        </footer>
+    </main>
+
+    <!-- simple script untuk efek animasi tambahan : hover smooth & protection klik dummy (go interactive) -->
+    <script>
+        (function(){
+            // Menambahkan efek smooth scroll untuk anchor (jika ada), hanya untuk estetika
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if(target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+            // efek hover pada produk tambahan ringan
+            const productItems = document.querySelectorAll('.product-item');
+            productItems.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    item.classList.add('shadow-md', 'bg-gray-50');
+                });
+                item.addEventListener('mouseleave', () => {
+                    item.classList.remove('shadow-md', 'bg-gray-50');
+                });
+            });
+            // Pesan small welcoming console (fun)
+            console.log("🍔 Burger Bangor - UMKM Profile loaded | Get the best burger in town!");
+        })();
+    </script>
+    <!-- style custom scroll untuk daftar menu -->
+    <style>
+        .custom-scroll::-webkit-scrollbar {
+            width: 5px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+            background: #e2e8f0;
+            border-radius: 10px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #10b981;
+            border-radius: 10px;
+        }
+        .custom-scroll {
+            scrollbar-width: thin;
+            scrollbar-color: #10b981 #e2e8f0;
+        }
+    </style>
+</body>
+</html>
